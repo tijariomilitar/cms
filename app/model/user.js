@@ -4,15 +4,17 @@ const User = function(){
 	this.id = 0;
 	this.name = "";
 	this.email = "";
-	this.phone = "";
+	this.username = "";
+	this.password = "";
 	
 	this.save = () => {
-		if(!this.name){ return err: "[MODEL:User]Nome de usuário obrigatório"; };
+		if(!this.name){ let err = "[MODEL:User]Nome de usuário obrigatório"; return err };
 
-		let query = "INSERT INTO cms.user (name, email, password) values ('"
-	        +user.name+"', '"
-	        +user.email+"', '"
-	        +user.password+"')";
+		let query = "INSERT INTO cms.user (name, email, username, password) values ('"
+	        +this.name+"', '"
+	        +this.email+"', '"
+	        +this.username+"', '"
+	        +this.password+"')";
 	    return db(query);
 	};
 };

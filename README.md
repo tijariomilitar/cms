@@ -16,6 +16,14 @@ Para Banco de Dados
 
 --------------------------------------------------
 
+JSHINT
+npm run-script jshint
+
+JASMINE (TDD)
+npm run-script spec
+
+--------------------------------------------------
+
 erp
 	app
 		controller

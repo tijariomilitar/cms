@@ -38,13 +38,13 @@ passport.use(
                 return done(null, false, req.flash('signupMessage', 'Senhas Não correspondem.'));
             } else {
                 let user = new User();
-                user.name: req.body.name;
-                user.login: req.body.login;
-                user.email: req.body.email;
-                user.password: bcrypt.hashSync(req.body.password, null, null);
+                user.name = req.body.name;
+                user.username = req.body.username;
+                user.email = req.body.email;
+                user.password = bcrypt.hashSync(req.body.password, null, null);
 
                 try {
-                    await User.save();
+                    await user.save();
                     return done(null, false, req.flash('signupMessage', 'Colaborador(a) '+user.name+' cadastrado(a) com sucesso!'));
                 } catch (err) {
                     console.log(err);

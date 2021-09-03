@@ -12,15 +12,12 @@ const homeController = {
 		if(req.user){
 			return res.redirect("/");
 		}
-		res.render('login', { message: req.flash('loginMessage')});
+		res.render('user/login', { message: req.flash('loginMessage')});
 	},
 	successfulLogin: (req, res) => {
 		res.redirect('/');
 	},
 	signup: async (req, res) => {
-		// if(!await userController.verifyAccess(req, res, ['adm'])){
-		// 	return res.redirect('/');
-		// };
 		res.render('user/signup', { user: req.user, message: req.flash('signupMessage')});
 	},
 	successfulSignup: (req, res) => {

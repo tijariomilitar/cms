@@ -4,46 +4,35 @@
 	</head>
 	<body>
 		<div class="main">
-			<header><img class="width-150 opacity-hover-08 pointer" onclick="window.location.href='/'" src="/images/favicon/favicon-black.png"></header>
-	        <% include ./../partials/nav %>
-			<section>
-				<div class="container">
-					<div class="box b1 container">
-						<% if (message.length > 0) { %>
-                            <div class="box b1 alert-msg"><%= message %></div>
-                        <% } %>
-						<form action="/user/signup" class="box b1 container ground border padding-10" method="post">
-							<div class="box b1 em13 georgia underline center">Preencha as informações necessárias</div>
-							<input type="text" class="box b1 em12 border-bottom padding-10 margin-top-10 center" name="name" maxlength="60" autocomplete="off" placeholder="Nome">
-							<input type="email" class="box b1 em12 border-bottom padding-10 margin-top-10 center" name="email" id="email" maxlength="60" autocomplete="off" placeholder="E-mail">
-							<input type="password" class="box b1 em12 border-bottom padding-10 margin-top-10 center" name="password" maxlength="45" autocomplete="off" placeholder="Senha">
-							<input type="password" class="box b1 em12 border-bottom padding-10 margin-top-10 center" name="confirmPassword" maxlength="45" autocomplete="off" placeholder="Confirmar senha">
-							<p class="underline"></p>
-							<button type="submit" class="btn-submit">Cadastrar</button>
-						</form>
+	        <header class="theme-header container" style="background-color:#fff;">
+				<div class="mobile-box b3 padding-10">
+					<img class="width-70 opacity-out-08 pointer" onclick="window.location.href='/'" src="/images/favicon/favicon-black.png">
+				</div>
+				<div class="mobile-box b2-3 container center">
+					<div class="right container">
+						<div class="mobile-box georgia margin-left-10 margin-right-10 bold center padding-5 opacity-out-07 pointer" onclick="window.location.href='/login'">Login</div>
 					</div>
+				</div>
+			</header>
+			<section>
+				<div class="container margin-top-5 h-center">
+					<% if (message.length > 0) { %>
+                        <div class="box b1 alert-msg"><%= message %></div>
+                    <% } %>
+					<form action="/user/signup" class="box b2 container ground border padding-10" method="post">
+						<div class="box b1 em13 georgia underline center">Realizar cadastro</div>
+						<input type="text" class="box b1 border-bottom padding-10 margin-top-10 center" name="name" maxlength="60" autocomplete="off" placeholder="Nome Completo">
+						<input type="text" class="box b1 border-bottom padding-10 margin-top-10 center" name="username" id="username" maxlength="60" autocomplete="off" placeholder="Nome de usuário">
+						<input type="password" class="box b1 border-bottom padding-10 margin-top-10 center" name="password" maxlength="45" autocomplete="off" placeholder="Senha">
+						<input type="password" class="box b1 border-bottom padding-10 margin-top-10 center" name="confirmPassword" maxlength="45" autocomplete="off" placeholder="Confirmar senha">
+						<button type="submit" class="box b1 submit-generic margin-top-5">Cadastrar</button>
+					</form>
 				</div>
 			</section>
 		</div>
-		<!-- <button onclick="window.location.href='/users'">Usuários</button> -->
 	</body>
 	<footer>
 		<% include ./../partials/footer %>
         <% include ./partial %>
 	</footer>
-	<script>
-		function filldate(){
-			const Months = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']; 
-			for(i=1;i<32;i++){
-				document.getElementById('day').innerHTML += "<option value="+i+">"+i+"</option>";
-			};
-			for(month of Months){
-				document.getElementById('month').innerHTML += "<option value="+month+">"+month+"</option>";
-			};
-			for(i=2019;i>1900;i--){
-				document.getElementById('year').innerHTML += "<option value="+i+">"+i+"</option>";
-			}
-		};
-		filldate();
-	</script>
 </html>

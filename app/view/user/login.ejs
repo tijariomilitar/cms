@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <% include ./../partials/head %>
+    </head>
+    <body>
+        <header class="theme-header container" style="background-color:#fff;">
+            <div class="mobile-box b3 padding-10">
+                <img class="width-70 opacity-out-08 pointer" onclick="window.location.href='/'" src="/images/favicon/favicon-black.png">
+            </div>
+            <div class="mobile-box b2-3 container center">
+                <div class="right container">
+                    <div class="mobile-box georgia margin-left-10 margin-right-10 bold center border-explicit radius-30 padding-10 opacity-out-07 pointer" onclick="window.location.href='/signup'">Signup</div>
+                </div>
+            </div>
+        </header>
+        
+        <div class="container margin-top-5 h-center">
+            <% if (message.length > 0) { %>
+                <div class="box b1 alert-msg">
+                    <div class="box b1 bold"><%= message %></div>
+                </div>
+            <% } %>
+            <form action="/user/login" method="post" class="box b2 container ground border padding-10">
+                <div class="box b1 em13 georgia underline center">Realizar login</div>
+                <h5 class="box b1 center margin-top-10">E-mail</h5>
+                <input type="email" class="box b1 border-bottom margin-top-5 padding-10 center" name="email" autocomplete="off">
+                <h5 class="box b1 center margin-top-10">Senha</h5>
+                <input type="password" class="box b1 border-bottom margin-top-5 padding-10 center" name="password" autocomplete="off">
+                <button type="submit" class="box b1 submit-generic margin-top-5 bold">Entrar</button>
+            </form>
+        </div>
+    </body>
+    <footer>
+        <% include ./../partials/footer %>
+        </script>
+    </footer>
+</html>

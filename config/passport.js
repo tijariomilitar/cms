@@ -29,7 +29,7 @@ passport.use(
 
         if(!req.body.name){
             return done(null, false, req.flash('signupMessage', 'É necessário preencher todos os campos.'));
-        };
+        }
 
         if(user.length) {
             return done(null, false, req.flash('signupMessage', 'Este usuário já está cadastrado.'));
@@ -49,9 +49,9 @@ passport.use(
                 } catch (err) {
                     console.log(err);
                     return done(null, false, req.flash('signupMessage', 'Ocorreu um erro ao cadastrar o colaborador!'));
-                };
-            };
-        };
+                }
+            }
+        }
     })
 );
 
@@ -67,14 +67,14 @@ passport.use(
 
         if (!user.length){
             return done(null, false, req.flash('loginMessage', 'Usuário não encontrado.'));
-        };
+        }
 
         if(user.length){
             if (!bcrypt.compareSync(password, user[0].password)){
                 return done(null, false, req.flash('loginMessage', 'Senha inválida.'));
-            };
+            }
             return done(null, user[0]);
-        };
+        }
     })
 );
 

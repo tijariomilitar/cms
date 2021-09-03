@@ -5,7 +5,6 @@ describe("User model", function() {
 	it("should return property", function() {
 		expect(user.id).toBe(0);
 		expect(user.name).toBe("");
-		expect(user.email).toBe("");
 		expect(user.username).toBe("");
 		expect(user.password).toBe("");
 	});

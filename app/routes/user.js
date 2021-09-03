@@ -1,11 +1,11 @@
 const router = require("express").Router();
-
 const passport = require('../../config/passport');
+const lib = require("jarmlib");
 
 const userController = require("../controller/user");
 const homeController = require("../controller/home");
 
-router.get('/', userController.verify, userController.index);
+router.get('/', userController.verify, lib.route.toHttps, userController.index);
 
 router.post('/login', passport.authenticate('local-login', { 
 	failureRedirect: '/login',

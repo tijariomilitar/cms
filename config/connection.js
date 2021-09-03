@@ -16,11 +16,11 @@ const db = async (query) => {
 		    connection.query(query, (err, rows) => {
 		        connection.release();
 		        if(!err){
-		        	resolve(rows)
+		        	resolve(rows);
 		        } else {
 		        	console.log(err);
 		        	reject(err);
-		        };
+		        }
 		    });
 		});
 	});

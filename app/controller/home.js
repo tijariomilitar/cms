@@ -5,13 +5,13 @@ const homeController = {
 	index: async (req, res) => {
 		if(req.user){
 			return res.render('home', { user: req.user });
-		};
+		}
 		res.render('index', { message: req.flash('loginMessage') });
 	},
 	login: (req, res) => {
 		if(req.user){
 			return res.redirect("/");
-		};
+		}
 		res.render('login', { message: req.flash('loginMessage')});
 	},
 	successfulLogin: (req, res) => {

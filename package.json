@@ -4,7 +4,7 @@
   "description": "JA Rio Militar websystem made by WiseCorp.",
   "scripts": {
     "start": "node ./bin/www",
-    "jshint": "node ./node_modules/jshint/bin/jshint",
+    "jshint": "node ./node_modules/jshint/bin/jshint app config public spec",
     "spec": "node ./node_modules/jasmine/bin/jasmine"
   },
   "dependencies": {
@@ -16,6 +16,7 @@
     "ejs": "^2.7.1",
     "express": "^4.17.1",
     "express-session": "^1.16.1",
+    "jarmlib": "^1.0.33",
     "jasmine": "^3.7.0",
     "jshint": "^2.13.0",
     "mysql": "^2.17.1",
